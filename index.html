@@ -105,6 +105,38 @@ body::before {
     display: none;
 }
 
+/* MESSAGE CARD - SCROLLABLE */
+.message {
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar styling for message card */
+.message::-webkit-scrollbar {
+    width: 8px;
+}
+
+.message::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.message::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(255, 120, 160, 0.6), rgba(255, 180, 200, 0.6));
+    border-radius: 10px;
+}
+
+.message::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(255, 120, 160, 0.9), rgba(255, 180, 200, 0.9));
+}
+
+/* Firefox scrollbar */
+.message {
+    scrollbar-color: rgba(255, 120, 160, 0.6) rgba(255, 255, 255, 0.1);
+    scrollbar-width: thin;
+}
+
 /* BORDER GLOW */
 .card::before,
 .choice-container::before,
@@ -205,6 +237,8 @@ button {
 #typeText {
     line-height: 1.7;
     white-space: pre-line;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .cursor {
@@ -277,7 +311,7 @@ button {
 <div class="popup-overlay" id="popupOverlay">
     <div class="popup-box">
         <h2> Wait…</h2>
-        <p>Once you open this,<br>there’s no turning back</p>
+        <p>Once you open this,<br>there's no turning back</p>
         <div class="popup-buttons">
             <button onclick="confirmYes()">Open </button>
             <button class="soft" onclick="closePopup()">Not yet </button>
@@ -365,11 +399,11 @@ function fadeInMusic(){
 
 /* MESSAGE */
 const msg=`
-I hope this message finds you well. I just wanted to take a moment to tell you how much I admire you. I’ve been secretly admiring you from afar for quite some time now. I’m not really the expressive type of person, and I don’t even know why I’m doing this. I always thought doing things like this was a waste of time, but here I am now, confessing to the girl I like.
+I hope this message finds you well. I just wanted to take a moment to tell you how much I admire you. I've been secretly admiring you from afar for quite some time now. I'm not really the expressive type of person, and I don't even know why I'm doing this. I always thought doing things like this was a waste of time, but here I am now, confessing to the girl I like.
 
-Every time I see you or when you’re near me, I can’t focus. I can’t look at you eye to eye because you make me nervous. I don’t know if you’ve noticed it, but whenever you’re around, I end up doing dumb things. I know this may come as a surprise, and I don’t want to make things awkward between us.
+Every time I see you or when you're near me, I can't focus. I can't look at you eye to eye because you make me nervous. I don't know if you've noticed it, but whenever you're around, I end up doing dumb things. I know this may come as a surprise, and I don't want to make things awkward between us.
 
-I’m not expecting anything in return. No matter what your answer is, I’m thankful I got the chance to be honest about how I feel.`;
+I'm not expecting anything in return. No matter what your answer is, I'm thankful I got the chance to be honest about how I feel.`;
 
 function typeWriter(){
     const t=typeText;
